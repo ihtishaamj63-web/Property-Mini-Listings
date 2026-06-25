@@ -18,6 +18,7 @@
         @bookmark="toggleBookmark"
       />
     </main>
+    <AppFooter />
   </div>
 </template>
 
@@ -27,6 +28,7 @@ import SearchBar from "./components/SearchBar.vue";
 import SortToggle from "./components/SortToggle.vue";
 import PriceRangeFilter from "./components/PriceRangeFilter.vue";
 import PropertyGrid from "./components/PropertyGrid.vue";
+import AppFooter from "./components/AppFooter.vue";
 import { properties, getPriceRange } from "./data/properties.js";
 
 export default {
@@ -37,6 +39,7 @@ export default {
     SortToggle,
     PriceRangeFilter,
     PropertyGrid,
+    AppFooter,
   },
   data() {
     const range = getPriceRange(properties);
@@ -126,10 +129,14 @@ body {
 
 .app {
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .main-content {
+  flex: 1;
   max-width: 1200px;
+  width: 100%;
   margin: 0 auto;
   padding: 32px 24px;
 }
